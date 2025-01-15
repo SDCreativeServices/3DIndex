@@ -68,12 +68,16 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1em;
+    padding: 0 10px; /* Add horizontal padding for gutters */
 }
 
 .sketchfab-embed-wrapper iframe {
     width: 100%;
     height: 300px;
     border: none;
+    margin: 0 auto; /* Center embeds in grid */
+    max-width: calc(100% - 20px); /* Add a margin to prevent touching screen edges */
+    box-sizing: border-box; /* Include padding/margins in width calculation */
 }
 
 /* Footer */
@@ -83,9 +87,13 @@ footer {
     text-align: center;
     padding: 1em 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    left: 0; /* Ensure it starts from the left edge */
+    right: 0; /* Ensure it ends at the right edge */
+    width: 100%; /* Span the entire width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
+
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
