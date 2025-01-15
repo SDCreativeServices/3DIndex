@@ -67,8 +67,8 @@ h2 {
 .model-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1em;
-    padding: 0 10px; /* Add horizontal padding for gutters */
+    gap: 2em;
+    padding: 0 30px; /* Add horizontal padding for gutters */
 }
 
 .sketchfab-embed-wrapper iframe {
@@ -76,7 +76,7 @@ h2 {
     height: 300px;
     border: none;
     margin: 0 auto; /* Center embeds in grid */
-    max-width: calc(100% - 20px); /* Add a margin to prevent touching screen edges */
+    max-width: calc(100% - 30px); /* Add a margin to prevent touching screen edges */
     box-sizing: border-box; /* Include padding/margins in width calculation */
 }
 
