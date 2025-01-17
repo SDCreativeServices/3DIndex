@@ -61,6 +61,7 @@ h2 {
     font-size: 1.8em;
     color: #333;
     margin-bottom: 1em;
+    padding-left: 15px; /* Add padding to the left */
 }
 
 /* Responsive Grid for Embedded Models */
@@ -77,7 +78,7 @@ h2 {
     height: 300px;
     border: none;
     margin: 0 auto; /* Center embeds in grid */
-    margin-bottom: 80px; /* Add space below each embed */
+    margin-bottom: 10px; /* Add space below each embed */
     max-width: calc(100% - 30px); /* Add a margin to prevent touching screen edges */
     box-sizing: border-box; /* Include padding/margins in width calculation */
 }
@@ -119,3 +120,4 @@ footer {
         margin: 0.5em 0;
     }
 }
+
