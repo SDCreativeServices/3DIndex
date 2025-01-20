@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page10</title>
+    <title>page1</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="3D Model Viewer">
+            <img src="logo.png" alt="Logo">
         </div>
+        <input id="searchBar" type="text" placeholder="Search on page..." />
         <nav>
-            <ul>
+            <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu">☰</button>
+            <ul id="navMenu" class="nav-menu">
                 <li><a href="index.html">Tents</a></li>
                 <li><a href="page2.html">Table Throws</a></li>
                 <li><a href="page3.html">Retractors</a></li>
@@ -30,6 +32,7 @@
                 <li><a href="page15.html">Additional Resources</a></li>
             </ul>
         </nav>
+        
     </header>
     <section id="page10" class="page hidden">
         <h2>Banners & Flags</h2>
