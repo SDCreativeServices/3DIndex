@@ -14,9 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarCollapse = document.querySelector('.collapse.navbar-collapse');
     const body = document.body;
 
-    // Disable scrolling when the menu is open
+    // Disable scrolling on the page but allow it on the menu
     const disableScroll = (e) => {
-        e.preventDefault();
+        if (!navbarCollapse.contains(e.target)) {
+            e.preventDefault();
+        }
     };
 
     // Toggle scrolling when the menu is opened/closed
