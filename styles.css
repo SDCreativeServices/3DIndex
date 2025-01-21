@@ -138,6 +138,8 @@ footer {
 .no-scroll {
     overflow: hidden;
     height: 100vh;
+    position: fixed;
+    width: 100%;
 }
 
 /* Hamburger Menu - Independent Scroll */
@@ -160,6 +162,7 @@ footer {
     background-color: #ffd700; /* Yellow thumb */
     border-radius: 4px;
 }
+
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {

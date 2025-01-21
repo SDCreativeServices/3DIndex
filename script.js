@@ -29,10 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     
+        // Prevent touch gestures from propagating to the body
+        navbarCollapse.addEventListener('touchmove', (e) => {
+            e.stopPropagation();
+        });
+    
         // Remove no-scroll class when menu closes
         navbarCollapse.addEventListener('hidden.bs.collapse', () => {
             body.classList.remove('no-scroll');
         });
     });
     
-});
