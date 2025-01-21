@@ -9,34 +9,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
+    // Hamburger Menu Scrolling Logic
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.collapse.navbar-collapse');
+    const body = document.body;
+
+    // Disable scrolling when the menu is open
+    const disableScroll = (e) => {
+        e.preventDefault();
+    };
+
+    // Toggle scrolling when the menu is opened/closed
+    navbarToggler.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+            // Menu is closing
+            body.classList.remove('no-scroll');
+            document.removeEventListener('touchmove', disableScroll, { passive: false });
+            document.removeEventListener('wheel', disableScroll, { passive: false });
         } else {
-            backToTopButton.classList.remove('visible');
+            // Menu is opening
+            body.classList.add('no-scroll');
+            document.addEventListener('touchmove', disableScroll, { passive: false });
+            document.addEventListener('wheel', disableScroll, { passive: false });
         }
     });
-    document.addEventListener('DOMContentLoaded', () => {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('.collapse.navbar-collapse');
-        const body = document.body;
-    
-        navbarToggler.addEventListener('click', () => {
-            if (navbarCollapse.classList.contains('show')) {
-                body.classList.remove('no-scroll');
-            } else {
-                body.classList.add('no-scroll');
-            }
-        });
-    
-        // Prevent touch gestures from propagating to the body
-        navbarCollapse.addEventListener('touchmove', (e) => {
-            e.stopPropagation();
-        });
-    
-        // Remove no-scroll class when menu closes
-        navbarCollapse.addEventListener('hidden.bs.collapse', () => {
-            body.classList.remove('no-scroll');
-        });
+
+    // Ensure scrolling is re-enabled when the menu closes
+    navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+        body.classList.remove('no-scroll');
+        document.removeEventListener('touchmove', disableScroll, { passive: false });
+        document.removeEventListener('wheel', disableScroll, { passive: false });
     });
-    
+});
