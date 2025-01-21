@@ -76,6 +76,15 @@ header .navbar-brand img {
     border-radius: 4px;
 }
 
+/* Disable page scrolling when menu is open */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
+
+
 /* Grid Layout for Embedded Items */
 .model-grid {
     display: grid;
