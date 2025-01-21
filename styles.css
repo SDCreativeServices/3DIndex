@@ -134,6 +134,32 @@ footer {
     visibility: visible;
     transform: translateY(0);
 }
+/* Disable scrolling for the page when the menu is open */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Hamburger Menu - Independent Scroll */
+.collapse.navbar-collapse {
+    max-height: 400px; /* Limit height when expanded */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ffd700 #333; /* Yellow thumb, dark track */
+}
+
+.collapse.navbar-collapse::-webkit-scrollbar {
+    width: 8px;
+}
+
+.collapse.navbar-collapse::-webkit-scrollbar-track {
+    background: #333; /* Dark track */
+}
+
+.collapse.navbar-collapse::-webkit-scrollbar-thumb {
+    background-color: #ffd700; /* Yellow thumb */
+    border-radius: 4px;
+}
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
